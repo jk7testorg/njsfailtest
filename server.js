@@ -3,7 +3,7 @@ const http = require("http");
 const PORT = process.env.PORT || 3000;
 const URL_PREFIX = (process.env.URL_PREFIX || "").replace(/\/$/, "");
 const MAX_BODY_BYTES = 10 * 1024;
-const VALID_STATUS = ["todo", "in-progress", "done";
+const VALID_STATUS = ["todo", "in-progress", "done"];
 const VALID_PRIORITY = ["low", "medium", "high"];
 
 // In-memory store (resets on pod restart)
