@@ -181,4 +181,4 @@ const server = http.createServer((req, res) => {
 
 server.listen(PORT, "0.0.0.0", () => {
   console.log(`DSSP application running on port ${PORT}, prefix: ${URL_PREFIX || "(none)"}`);
-});
+};
