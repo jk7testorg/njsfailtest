@@ -4,6 +4,6 @@
   "description": "Simple Docker learning app",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "node server.js
   }
 }
