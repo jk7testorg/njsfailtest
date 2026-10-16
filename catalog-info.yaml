@@ -1,0 +1,22 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: njsfailtest
+  annotations:
+    backstage.io/techdocs-ref: dir:.
+    backstage.io/kubernetes-id: njsfailtest
+    sonarqube.org/project-key: njsfailtest
+    github.com/project-slug: jk7testorg/njsfailtest
+    argocd/app-name: njsfailtest-dev
+    prometheus.io/rule: "kube_pod_status_phase{pod=~'njsfailtest.*'}|phase,kube_pod_container_status_restarts_total{pod=~'njsfailtest.*'}|container"
+    prometheus.io/alert: "KubePodCrashLooping,KubeDeploymentReplicasMismatch,KubePodNotReady,KubeContainerWaiting,KubeContainerOOMKilled,KubeDeploymentRolloutStuck"
+    prometheus.io/labels: "namespace=dev"
+    grafana/overview-dashboard: 'http://34.29.242.32/grafana/d/ffuuiuytw0f0gb/backstage-view?var-pod_prefix=njsfailtest&var-namespace=dev&kiosk' 
+  tags:
+    - nodejs
+    - scaffolded
+spec:
+  type: service
+  lifecycle: Dev
+  owner: user:default/madryx
+  system: dssp-platform
