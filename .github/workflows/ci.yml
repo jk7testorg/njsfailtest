@@ -60,7 +60,7 @@ jobs:
       # AI-decided: test
       - name: Run Tests
         run: |
-          npm test || true
+          npm test
 
       # SonarQube — language-specific flags for nodejs
       - name: SonarQube Analysis
